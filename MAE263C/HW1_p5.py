@@ -212,7 +212,8 @@ if __name__ == "__main__":
     simulator = Simulator(diagram)
 
     # Display Block Diagram
-    plot_diagram(diagram)
+    fig, ax = plot_diagram(diagram)
+    fig.savefig("HW1P5_diagram.png", dpi=300)
 
     # Get the context (this contains all the information needed to run the simulation)
     context = simulator.get_mutable_context()
@@ -256,7 +257,22 @@ if __name__ == "__main__":
 
     # TODO: Insert code below to plot the motor angular velocity against time and save 
     # the plot
-    #...
+    angular_velocity_log = angular_velocity_logger.FindLog(simulator.get_context())
+    ixs2 = np.arange(start=0, stop=len(angular_velocity_log.sample_times()), step=10)
+    t2 = angular_velocity_log.sample_times()[ixs]
+    angular_velocity = angular_velocity_log.data()[0, ixs2]
+
+    fig_motor_angular_velocity: plt.Figure = plt.figure()
+    ax_motor_angular_velocity: plt.Axes = fig_motor_angular_velocity.add_subplot(111)
+    # Set the title of the plot
+    ax_motor_angular_velocity.set_title("Angular Velocity vs Time")
+    # Set the x axis label of the plot
+    ax_motor_angular_velocity.set_xlabel("Time [s]")
+    # Set the y axis label of the plot
+    ax_motor_angular_velocity.set_ylabel("Velocity [rad/s]")
+    # Plot the motor armature current against time
+    ax_motor_angular_velocity.plot(t, angular_velocity)
+    fig_motor_angular_velocity.savefig("armature_velocity_vs_time.png", dpi=300)
 
     # This function shows the plots
     plt.show()
