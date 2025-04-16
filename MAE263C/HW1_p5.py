@@ -104,7 +104,7 @@ if __name__ == "__main__":
     motor_inertia: LinearSystem = builder.AddNamedSystem(
         "motor_inertia",
         transfer_function_to_linear_system(
-            continuous_time_denom_coeffs=(Im, 0)
+            continuous_time_numer_coeffs=(1,), continuous_time_denom_coeffs=(Im, 0)
         ),
     )
     motor_viscous_friction: Gain = builder.AddNamedSystem(
