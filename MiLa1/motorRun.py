@@ -173,6 +173,7 @@ class motorControl:
     def __init__(
         self,
         motor: dxl.DynamixelMotor,
+        motorS: dxl.DynamixelMotor,
         proportional_gain: float,
         integral_gain: float = 0.0,
         derivative_gain: float = 0.0,
@@ -182,6 +183,7 @@ class motorControl:
     ):
         self.max_duration_s = float(max_duration_s)
         self.motor = motor
+        self.motorS = motorS
         self.should_continue = True
 
         # `FixedFrequencyLoopManager` trys keep loop at a fixed frequency
@@ -333,16 +335,21 @@ if __name__ == "__main__":
     )
 
     # TODO: Replace "..." below with the correct Dynamixel ID found from Dynamixel Wizard
-    motor = motor_factory.create(4)
+    motor1 = motor_factory.create(4)
+    motor2 = motor_factory.create()
 
     # Make controller
     # TODO: Replace all "..." below with your selected choices of gains.
-    controller = PIDPositionController(
-        motor=motor,
-        proportional_gain=1,
-        integral_gain=0.001,
-        derivative_gain=0.001,
-        control_freq_Hz=100,
+    # controller = PIDPositionController(
+    #     motor=motor,
+    #     proportional_gain=1,
+    #     integral_gain=0.001,
+    #     derivative_gain=0.001,
+    #     control_freq_Hz=100,
+    # )
+
+    controller = motorControl(
+
     )
 
     # Start control loop

@@ -7,6 +7,7 @@ USER root
 ENV USER_NAME=user
 RUN useradd -m "$USER_NAME"
 RUN usermod -aG sudo "$USER_NAME"
+RUN passwd -d "$USER_NAME"
 
 # Create a directory for documents
 # RUN mkdir "/documents"
@@ -17,8 +18,11 @@ RUN usermod -aG sudo "$USER_NAME"
 # 4. Install package to set default Python to Python 3 (which is technically optional)
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update \
-    && apt-get install -y python3-pip python3-venv python-is-python3 \
+    && apt-get install -y python3-pip python3-venv python-is-python3 xvfb sudo \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 RUN pip install --upgrade pip setuptools
 USER user
+
+ENV PATH="/home/user/.local/bin:$PATH"
+EXPOSE 8888

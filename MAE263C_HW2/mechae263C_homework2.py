@@ -9,6 +9,10 @@ import numpy as np
 from numpy.typing import NDArray
 import math
 
+import pyvista as pv
+pv.OFF_SCREEN = True
+pv.start_xvfb()
+
 from mechae263C_helpers.hw2 import (
     generate_points_on_unit_sphere,
     plot_ellipsoids,
@@ -138,7 +142,8 @@ if __name__ == "__main__":
     # TODO:
     #   Replace "..." with code to make `plt.Axes` object on the figure for the force
     #   ellipses (`fig_force_ellipses`).
-    ax_force = plt.Axes(fig_force_ellipses, (-3.75,-3.75,3.75,3.75))
+    ax_force = fig_force_ellipses.add_subplot(1, 1, 1)
+    #ax_force = plt.Axes(fig_force_ellipses, (-3.75,-3.75,3.75,3.75))
 
     # This loop iterates over the list of configurations (`configs`) and uses the
     # `enumerate` function so that each iteration also has access to the index of the
@@ -191,8 +196,8 @@ if __name__ == "__main__":
         #         you can efficiently multiply every row of `matNx3` by `mat3x3` using:
         #         `result = (mat3x3 @ matNx3.T).T`
         #         where the `@` indicates matrix multiplication.
-        velocity_ellipsoid = (J*sphere_points.T).T
-        force_ellipsoid = (J_Tinv*sphere_points.T).T
+        velocity_ellipsoid = (J @ sphere_points.T).T
+        force_ellipsoid = (J_Tinv @ sphere_points.T).T
 
         # The below code calls `calc_ellipsoid_projection` to calculate the boundary
         # of the 2D ellipses formed by projecting the 3D ellipsoids onto the xy plane.
@@ -226,12 +231,14 @@ if __name__ == "__main__":
         #   https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html
 
         ax_vel.plot(
-            velocity_ellipse_points[:, 0] + ...,
-            velocity_ellipse_points[:, 1] + ...,
+            velocity_ellipse_points[:, 0] + frame_x_positions[-1],
+            velocity_ellipse_points[:, 1] + frame_y_positions[-1],
+            label=f"Configuration {i}"
         )
         ax_force.plot(
-            ...,
-            ...,
+            force_ellipse_points[:, 0] + frame_x_positions[-1],
+            force_ellipse_points[:, 1] + frame_y_positions[-1],
+            label=f"Configuration {i}:"
         )
 
         # The code below plots the manipulator links
@@ -248,11 +255,13 @@ if __name__ == "__main__":
         # Note:
         #   Take a second to verify that your 3D plots are consistent with your
         #   intuition about singular configurations
+        plot_name = "/workspaces/MAE263C_HW2/EllipsePlots/EllipseProjections_" + f"Configuration {i}"
+
         plot_ellipsoids(
             axis_title=f"Configuration {i}",  # Add plot title
             velocity_ellipsoid_points3D=velocity_ellipsoid,
             force_ellipsoid_points3D=force_ellipsoid,
-            file_path=...,  # Add file path/name to save plot in
+            file_path=plot_name,  # Add file path/name to save plot in
         )
 
     # ----------------------------------------------------------------------------------
@@ -264,28 +273,30 @@ if __name__ == "__main__":
     #   https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.set_xlim.html
     #   and
     #   https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.set_ylim.html
-    ax_vel.set_xlim(..., ...)  # Set y limits of velocity ellipse plot to range [-5, 8]
-    ax_vel.set_ylim(..., ...)  # Set y limits of velocity ellipse plot to range [-5, 5]
-    ...  # Set x limits of force ellipse plot to range [-5, 8]
-    ...  # Set y limits of force ellipse plot to range [-5, 5]
+    ax_vel.set_xlim(-5, 8)  # Set y limits of velocity ellipse plot to range [-5, 8]
+    ax_vel.set_ylim(-5, 5)  # Set y limits of velocity ellipse plot to range [-5, 5]
+    ax_force.set_xlim(-5, 8)  # Set x limits of force ellipse plot to range [-5, 8]
+    ax_force.set_ylim(-5, 5)  # Set y limits of force ellipse plot to range [-5, 5]
 
     # TODO:
     #   Replace occurrences of "..." with code to set the x and y labels of the plot.
     #   https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.set_xlabel.html
     #   and
     #   https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.set_ylabel.html
-    ax_vel.set_xlabel(...)  # Set x label of velocity ellipse plot
-    ax_vel.set_ylabel(...)  # Set y label of velocity ellipse plot
-    ...  # Set x label of force ellipse plot
-    ...  # Set y label of force ellipse plot
+    ax_vel.set_xlabel('X Position [m]')  # Set x label of velocity ellipse plot
+    ax_vel.set_ylabel('Y Position [m]')  # Set y label of velocity ellipse plot
+    ax_force.set_xlabel('X Position [m]')  # Set x label of force ellipse plot
+    ax_force.set_ylabel('Y Position [m]')  # Set y label of force ellipse plot
 
     # TODO:
     #   Replace occurrences of "..." with code to set title of plot.
     #   https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.set_title.html
     # Set title of velocity ellipse plot
-    ...
+    ax_vel.set_title('Velocity Ellipse Plot')
+    ax_vel.legend()
     # Set title of force ellipse plot
-    ...
+    ax_force.set_title('Force Ellipse Plot')
+    ax_force.legend()
 
     # TODO:
     #   Replace occurrences of "..." with code to save your figures
@@ -296,10 +307,10 @@ if __name__ == "__main__":
     #   To increase resolution of your saved plots you can pass the `dpi` argument to
     #   `Figure.savefig` with a high value (ex. 300).
     # Save velocity ellipse plot
-    ...
+    fig_velocity_ellipses.savefig("Velocity Ellipse Plot", dpi=300)
 
     # Save force ellipse plot
-    ...
+    fig_force_ellipses.savefig("Force Ellipse Plot", dpi=300)
 
     # Show the ellipse plots
-    plt.show()
+    #plt.show()

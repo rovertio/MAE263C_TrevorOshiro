@@ -110,9 +110,12 @@ def plot_ellipsoids(
 
     plotter.add_title(axis_title, font_size=title_font_size)
     plotter.show_grid(
-        xtitle=r"$\dot{x}$ or $F_x$",
-        ytitle=r"$\dot{y}$ or $F_y$",
-        ztitle=r"$\dot{\phi}$ or $M_z$",
+        # xtitle=r"$\dot{x}$ or $F_x$",
+        # ytitle=r"$\dot{y}$ or $F_y$",
+        # ztitle=r"$\dot{\phi}$ or $M_z$",
+        xtitle="X component: x-dot [m/s], f_x [N]",
+        ytitle="Y component: y-dot [m/s], f_y [N]",
+        ztitle="phi-dot [rad/s], M_z [Nm]",
         font_size=axes_font_size,
         grid="back",
         location="outer",
@@ -130,7 +133,13 @@ def plot_ellipsoids(
     if file_path is None:
         plotter.show(auto_close=False, interactive=False)
     else:
-        plotter.show(auto_close=False, interactive=False, screenshot=file_path)
+        plotter.show(auto_close=False, interactive=False, screenshot=file_path + "_view_iso")
+
+    plotter.view_xy()
+    if file_path is None:
+        plotter.show(auto_close=False, interactive=False)
+    else:
+        plotter.show(auto_close=False, interactive=False, screenshot=file_path + "_view_xy")
 
 
 def calc_ellipsoid_projection(
