@@ -191,9 +191,9 @@ if __name__ == "__main__":
     # TODO: Replace all "..." below with your selected choices of gains.
     controller = PIDPositionController(
         motor=motor,
-        proportional_gain=1,
-        integral_gain=0.001,
-        derivative_gain=0.001,
+        proportional_gain=10,
+        integral_gain=2,
+        derivative_gain=1,
         control_freq_Hz=100,
     )
 
