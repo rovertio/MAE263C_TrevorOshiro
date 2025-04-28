@@ -1,0 +1,7 @@
+{
+  "documentId": "0afb3ee3ed9d563e132452cb",
+  "outputFormat": "urdf",
+  "packageName": "robot_desc/robot",
+  "robotName": "project_robot",
+  "assemblyName": "RobotWorkspace"
+}

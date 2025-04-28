@@ -39,6 +39,15 @@ RUN apt-get update  && \
     rm -rf /var/lib/apt/lists/* 
 
 
+## Install files for the creation of URDF files within the workspace from Onshape
+RUN apt-get update \
+  && pip install onshape-to-robot \
+  && sudo add-apt-repository ppa:openscad/releases \
+  && sudo apt-get install openscad -y \
+  && sudo apt-get install meshlab -y \
+  && rm -rf /var/lib/apt/lists/* 
+  
+
 # Copy the entrypoint and bashrc scripts so we have 
 # our container's environment set up correctly
 COPY entrypoint.sh /entrypoint.sh
