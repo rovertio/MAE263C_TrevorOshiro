@@ -1,7 +1,7 @@
 {
-  "documentId": "0afb3ee3ed9d563e132452cb",
+  "documentId": "af0115e61c5582d0fb054981",
   "outputFormat": "urdf",
   "packageName": "robot_desc/robot",
   "robotName": "project_robot",
-  "assemblyName": "RobotWorkspace"
+  "assemblyName": "SimAssem"
 }

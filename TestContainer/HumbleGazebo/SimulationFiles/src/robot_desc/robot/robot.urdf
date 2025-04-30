@@ -1,71 +1,17 @@
 <?xml version="1.0" ?>
 <!-- Generated using onshape-to-robot -->
-<!-- Onshape document_id: 0afb3ee3ed9d563e132452cb -->
+<!-- Onshape document_id: af0115e61c5582d0fb054981 -->
 <robot name="project_robot">
-
-  <!-- Part 8020_1530_x_48 -->
-  <!-- <link name="cameraPost">
-    <visual>
-      <origin xyz="0.6096 1.18015 0.0127" rpy="1.5708 2.51804e-27 1.5708"/>
-      <geometry>
-        <mesh filename="package://robot_desc/robot/assets/8020_1530_x_48.stl"/>
-      </geometry>
-      <material name="8020_1530_x_48_material">
-        <color rgba="0.498039 0.498039 0.498039 1.0"/>
-      </material>
-    </visual>
-    <collision>
-      <origin xyz="0.6096 1.18015 0.0127" rpy="1.5708 2.51804e-27 1.5708"/>
-      <geometry>
-        <mesh filename="package://robot_desc/robot/assets/8020_1530_x_48.stl"/>
-      </geometry>
-    </collision>
-  </link> -->
-
-  <!-- <joint name="post_to_plate" type="fixed">
-    <parent link="part_1"/>
-    <child link="armbasemount"/>
-  </joint> -->
-
-  <link name="world"></link>
-
-    <!-- A simple fixed joint from our empty world link, to our base. -->
-    <!-- The base origin is offset from the world origin. -->
-  <joint name="base_joint" type="fixed">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <parent link="world"/>
-      <child link="armbasemount"/>        
-  </joint>
-
-
-  <!-- Link part_1 -->
-  <!-- <link name="part_1">
-    <inertial>
-      <origin xyz="0.241312 0.65195 0.0685751" rpy="0 0 0"/>
-      <mass value="0.117967"/>
-      <inertia ixx="0.00075606" ixy="-0.000672223" ixz="-0.00046422" iyy="0.00232655" iyz="-0.000159489" izz="0.00271358"/>
-    </inertial>
-    <visual>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <mesh filename="package://robot_desc/robot/assets/part_1.stl"/>
-      </geometry>
-      <material name="part_1_material">
-        <color rgba="0.960784 0.835294 0.470588 1.0"/>
-      </material>
-    </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <mesh filename="package://robot_desc/robot/assets/part_1.stl"/>
-      </geometry>
-    </collision>
-  </link> -->
-
-  <!-- Part armbasemount -->
+  <!-- Link armbasemount -->
   <link name="armbasemount">
+    <inertial>
+      <origin xyz="1.26354e-05 0.0741953 0.0570063" rpy="0 0 0"/>
+      <mass value="0.143819"/>
+      <inertia ixx="0.000257205" ixy="-1.1654e-08" ixz="-4.74482e-08" iyy="0.000259368" iyz="-9.79201e-05" izz="0.00022214"/>
+    </inertial>
+    <!-- Part armbasemount -->
     <visual>
-      <origin xyz="0.206816 0.6096 0.0727" rpy="1.5708 4.03897e-28 3.14159"/>
+      <origin xyz="0 0.1156 0.06" rpy="1.5708 -0 -1.5708"/>
       <geometry>
         <mesh filename="package://robot_desc/robot/assets/armbasemount.stl"/>
       </geometry>
@@ -74,70 +20,78 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="0.206816 0.6096 0.0727" rpy="1.5708 4.03897e-28 3.14159"/>
+      <origin xyz="0 0.1156 0.06" rpy="1.5708 -0 -1.5708"/>
       <geometry>
         <mesh filename="package://robot_desc/robot/assets/armbasemount.stl"/>
       </geometry>
     </collision>
-  </link>
-
-  <!-- <joint name="baseplate_to_mount" type="fixed">
-    <parent link="part_1"/>
-    <child link="armbasemount"/>
-  </joint> -->
-
-
-    <!-- Part dynamixelmotor -->
+    <!-- Part dynamixelmotor_withhorn -->
     <visual>
-      <origin xyz="0.194816 0.6096 0.09075" rpy="1.50988e-27 -1.59872e-14 -1.5708"/>
+      <origin xyz="-1.73472e-18 0.1036 0.07803" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://robot_desc/robot/assets/dynamixelmotor.stl"/>
+        <mesh filename="package://robot_desc/robot/assets/dynamixelmotor_withhorn.stl"/>
       </geometry>
-      <material name="dynamixelmotor_material">
+      <material name="dynamixelmotor_withhorn_material">
         <color rgba="0.647059 0.647059 0.647059 1.0"/>
       </material>
     </visual>
     <collision>
-      <origin xyz="0.194816 0.6096 0.09075" rpy="1.50988e-27 -1.59872e-14 -1.5708"/>
+      <origin xyz="-1.73472e-18 0.1036 0.07803" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://robot_desc/robot/assets/dynamixelmotor.stl"/>
+        <mesh filename="package://robot_desc/robot/assets/dynamixelmotor_withhorn.stl"/>
       </geometry>
     </collision>
-    <!-- Part topshoulderlink -->
+  </link>
+  <!-- Link dynamixelmotor_withhorn -->
+  <link name="dynamixelmotor_withhorn">
+    <inertial>
+      <origin xyz="0.258669 1.8478e-05 0.0163409" rpy="0 0 0"/>
+      <mass value="0.0982101"/>
+      <inertia ixx="2.87078e-05" ixy="-2.9545e-08" ixz="2.09241e-05" iyy="0.000537394" iyz="1.16309e-08" izz="0.000524006"/>
+    </inertial>
+    <!-- Part dynamixelmotor_withhorn_2 -->
     <visual>
-      <origin xyz="0.318995 0.725464 0.11125" rpy="-5.45442e-16 -1.37603e-15 0.751951"/>
+      <origin xyz="0.298 -5.83301e-17 0.015" rpy="3.14159 1.71531e-32 1.5708"/>
       <geometry>
-        <mesh filename="package://robot_desc/robot/assets/topshoulderlink.stl"/>
+        <mesh filename="package://robot_desc/robot/assets/dynamixelmotor_withhorn.stl"/>
       </geometry>
-      <material name="topshoulderlink_material">
+      <material name="dynamixelmotor_withhorn_2_material">
+        <color rgba="0.647059 0.647059 0.647059 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.298 -5.83301e-17 0.015" rpy="3.14159 1.71531e-32 1.5708"/>
+      <geometry>
+        <mesh filename="package://robot_desc/robot/assets/dynamixelmotor_withhorn.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part combinedshoulder -->
+    <visual>
+      <origin xyz="0.169838 0.0002 0" rpy="-3.14159 -0 -2.97496e-65"/>
+      <geometry>
+        <mesh filename="package://robot_desc/robot/assets/combinedshoulder.stl"/>
+      </geometry>
+      <material name="combinedshoulder_material">
         <color rgba="0.615686 0.811765 0.929412 1.0"/>
       </material>
     </visual>
     <collision>
-      <origin xyz="0.318995 0.725464 0.11125" rpy="-5.45442e-16 -1.37603e-15 0.751951"/>
+      <origin xyz="0.169838 0.0002 0" rpy="-3.14159 -0 -2.97496e-65"/>
       <geometry>
-        <mesh filename="package://robot_desc/robot/assets/topshoulderlink.stl"/>
+        <mesh filename="package://robot_desc/robot/assets/combinedshoulder.stl"/>
       </geometry>
     </collision>
-    <!-- Part motorhorn -->
-    <visual>
-      <origin xyz="0.399873 0.729104 0.07775" rpy="-3.14159 -2.71435e-16 -2.55565"/>
-      <geometry>
-        <mesh filename="package://robot_desc/robot/assets/motorhorn.stl"/>
-      </geometry>
-      <material name="motorhorn_material">
-        <color rgba="0.647059 0.647059 0.647059 1.0"/>
-      </material>
-    </visual>
-    <collision>
-      <origin xyz="0.399873 0.729104 0.07775" rpy="-3.14159 -2.71435e-16 -2.55565"/>
-      <geometry>
-        <mesh filename="package://robot_desc/robot/assets/motorhorn.stl"/>
-      </geometry>
-    </collision>
+  </link>
+  <!-- Link hooplink -->
+  <link name="hooplink">
+    <inertial>
+      <origin xyz="0.13582 -2.36422e-05 0.00482647" rpy="0 0 0"/>
+      <mass value="0.0174"/>
+      <inertia ixx="4.93554e-06" ixy="6.81023e-08" ixz="1.73507e-06" iyy="0.000152572" iyz="-1.36842e-09" izz="0.000156908"/>
+    </inertial>
     <!-- Part hooplink -->
     <visual>
-      <origin xyz="0.652242 0.79964 0.11675" rpy="7.8454e-16 -1.01634e-15 -0.841585"/>
+      <origin xyz="0.169838 0.1698 0" rpy="0 -0 2.97496e-65"/>
       <geometry>
         <mesh filename="package://robot_desc/robot/assets/hooplink.stl"/>
       </geometry>
@@ -146,58 +100,41 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="0.652242 0.79964 0.11675" rpy="7.8454e-16 -1.01634e-15 -0.841585"/>
+      <origin xyz="0.169838 0.1698 0" rpy="0 -0 2.97496e-65"/>
       <geometry>
         <mesh filename="package://robot_desc/robot/assets/hooplink.stl"/>
       </geometry>
     </collision>
-    <!-- Part bottomshoulderlink -->
-    <visual>
-      <origin xyz="0.368641 0.67238 0.07025" rpy="3.14159 -1.37603e-15 0.751951"/>
-      <geometry>
-        <mesh filename="package://robot_desc/robot/assets/bottomshoulderlink.stl"/>
-      </geometry>
-      <material name="bottomshoulderlink_material">
-        <color rgba="0.231373 0.380392 0.705882 1.0"/>
-      </material>
-    </visual>
-    <collision>
-      <origin xyz="0.368641 0.67238 0.07025" rpy="3.14159 -1.37603e-15 0.751951"/>
-      <geometry>
-        <mesh filename="package://robot_desc/robot/assets/bottomshoulderlink.stl"/>
-      </geometry>
-    </collision>
-    <!-- Part motorhorn_2 -->
-    <visual>
-      <origin xyz="0.131749 0.552632 0.07025" rpy="1.15994e-16 -2.40898e-17 -1.5708"/>
-      <geometry>
-        <mesh filename="package://robot_desc/robot/assets/motorhorn.stl"/>
-      </geometry>
-      <material name="motorhorn_2_material">
-        <color rgba="0.647059 0.647059 0.647059 1.0"/>
-      </material>
-    </visual>
-    <collision>
-      <origin xyz="0.131749 0.552632 0.07025" rpy="1.15994e-16 -2.40898e-17 -1.5708"/>
-      <geometry>
-        <mesh filename="package://robot_desc/robot/assets/motorhorn.stl"/>
-      </geometry>
-    </collision>
-    <!-- Part dynamixelmotor_2 -->
-    <visual>
-      <origin xyz="0.412463 0.813153 0.09625" rpy="1.37603e-15 -4.97532e-16 -0.818845"/>
-      <geometry>
-        <mesh filename="package://robot_desc/robot/assets/dynamixelmotor.stl"/>
-      </geometry>
-      <material name="dynamixelmotor_2_material">
-        <color rgba="0.647059 0.647059 0.647059 1.0"/>
-      </material>
-    </visual>
-    <collision>
-      <origin xyz="0.412463 0.813153 0.09625" rpy="1.37603e-15 -4.97532e-16 -0.818845"/>
-      <geometry>
-        <mesh filename="package://robot_desc/robot/assets/dynamixelmotor.stl"/>
-      </geometry>
-    </collision>
   </link>
+  <!-- Frame EEframe (dummy link + fixed joint) -->
+  <link name="EEframe">
+    <origin xyz="0 0 0" rpy="0 -0 0"/>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-9"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+  </link>
+  <joint name="EEframe_frame" type="fixed">
+    <origin xyz="0.3 -0.0002 0.003" rpy="0 -0 2.97496e-65"/>
+    <parent link="hooplink"/>
+    <child link="EEframe"/>
+    <axis xyz="0 0 0"/>
+  </joint>
+  <!-- Joint from dynamixelmotor_withhorn to hooplink -->
+  <joint name="elbow" type="revolute">
+    <origin xyz="0.298 3.3632e-16 -0.0055" rpy="3.14159 -1.36846e-48 -2.42861e-17"/>
+    <parent link="dynamixelmotor_withhorn"/>
+    <child link="hooplink"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-2.30383" upper="2.30383"/>
+  </joint>
+  <!-- Joint from armbasemount to dynamixelmotor_withhorn -->
+  <joint name="shoulder" type="revolute">
+    <origin xyz="-1.43115e-17 0.1036 0.09853" rpy="-3.14159 1.2326e-32 1.56087"/>
+    <parent link="armbasemount"/>
+    <child link="dynamixelmotor_withhorn"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-1.58072" upper="1.56087"/>
+  </joint>
 </robot>
