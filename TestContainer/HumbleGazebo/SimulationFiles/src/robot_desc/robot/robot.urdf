@@ -2,46 +2,9 @@
 <!-- Generated using onshape-to-robot -->
 <!-- Onshape document_id: 0afb3ee3ed9d563e132452cb -->
 <robot name="project_robot">
-  <!-- Link part_1 -->
-  <link name="part_1">
-    <inertial>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <mass value="1e-09"/>
-      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
-    </inertial>
-    <!-- Part part_1 -->
-    <visual>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <mesh filename="package://robot_desc/robot/assets/part_1.stl"/>
-      </geometry>
-      <material name="part_1_material">
-        <color rgba="0.960784 0.835294 0.470588 1.0"/>
-      </material>
-    </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <mesh filename="package://robot_desc/robot/assets/part_1.stl"/>
-      </geometry>
-    </collision>
-    <!-- Part part_1_2 -->
-    <visual>
-      <origin xyz="0.176816 0.6096 0.0377" rpy="1.5708 4.03897e-28 3.14159"/>
-      <geometry>
-        <mesh filename="package://robot_desc/robot/assets/part_1__2.stl"/>
-      </geometry>
-      <material name="part_1_2_material">
-        <color rgba="0.615686 0.811765 0.929412 1.0"/>
-      </material>
-    </visual>
-    <collision>
-      <origin xyz="0.176816 0.6096 0.0377" rpy="1.5708 4.03897e-28 3.14159"/>
-      <geometry>
-        <mesh filename="package://robot_desc/robot/assets/part_1__2.stl"/>
-      </geometry>
-    </collision>
-    <!-- Part 8020_1530_x_48 -->
+
+  <!-- Part 8020_1530_x_48 -->
+  <!-- <link name="cameraPost">
     <visual>
       <origin xyz="0.6096 1.18015 0.0127" rpy="1.5708 2.51804e-27 1.5708"/>
       <geometry>
@@ -57,148 +20,183 @@
         <mesh filename="package://robot_desc/robot/assets/8020_1530_x_48.stl"/>
       </geometry>
     </collision>
-    <!-- Part dc07_a_dummy_al -->
+  </link> -->
+
+  <!-- <joint name="post_to_plate" type="fixed">
+    <parent link="part_1"/>
+    <child link="armbasemount"/>
+  </joint> -->
+
+  <link name="world"></link>
+
+    <!-- A simple fixed joint from our empty world link, to our base. -->
+    <!-- The base origin is offset from the world origin. -->
+  <joint name="base_joint" type="fixed">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="world"/>
+      <child link="armbasemount"/>        
+  </joint>
+
+
+  <!-- Link part_1 -->
+  <!-- <link name="part_1">
+    <inertial>
+      <origin xyz="0.241312 0.65195 0.0685751" rpy="0 0 0"/>
+      <mass value="0.117967"/>
+      <inertia ixx="0.00075606" ixy="-0.000672223" ixz="-0.00046422" iyy="0.00232655" iyz="-0.000159489" izz="0.00271358"/>
+    </inertial>
     <visual>
-      <origin xyz="0.164801 0.6096 0.05575" rpy="-3.54409e-27 3.33067e-16 -1.5708"/>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://robot_desc/robot/assets/dc07_a_dummy_al.stl"/>
+        <mesh filename="package://robot_desc/robot/assets/part_1.stl"/>
       </geometry>
-      <material name="dc07_a_dummy_al_material">
-        <color rgba="0.647059 0.647059 0.647059 1.0"/>
+      <material name="part_1_material">
+        <color rgba="0.960784 0.835294 0.470588 1.0"/>
       </material>
     </visual>
     <collision>
-      <origin xyz="0.164801 0.6096 0.05575" rpy="-3.54409e-27 3.33067e-16 -1.5708"/>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://robot_desc/robot/assets/dc07_a_dummy_al.stl"/>
+        <mesh filename="package://robot_desc/robot/assets/part_1.stl"/>
       </geometry>
     </collision>
-    <!-- Part part_1_3 -->
+  </link> -->
+
+  <!-- Part armbasemount -->
+  <link name="armbasemount">
     <visual>
-      <origin xyz="0.28898 0.725464 0.07625" rpy="-5.45442e-16 -1.37603e-15 0.751951"/>
+      <origin xyz="0.206816 0.6096 0.0727" rpy="1.5708 4.03897e-28 3.14159"/>
       <geometry>
-        <mesh filename="package://robot_desc/robot/assets/part_1__3.stl"/>
+        <mesh filename="package://robot_desc/robot/assets/armbasemount.stl"/>
       </geometry>
-      <material name="part_1_3_material">
+      <material name="armbasemount_material">
         <color rgba="0.615686 0.811765 0.929412 1.0"/>
       </material>
     </visual>
     <collision>
-      <origin xyz="0.28898 0.725464 0.07625" rpy="-5.45442e-16 -1.37603e-15 0.751951"/>
+      <origin xyz="0.206816 0.6096 0.0727" rpy="1.5708 4.03897e-28 3.14159"/>
       <geometry>
-        <mesh filename="package://robot_desc/robot/assets/part_1__3.stl"/>
+        <mesh filename="package://robot_desc/robot/assets/armbasemount.stl"/>
       </geometry>
     </collision>
-    <!-- Part part_2 -->
+  </link>
+
+  <!-- <joint name="baseplate_to_mount" type="fixed">
+    <parent link="part_1"/>
+    <child link="armbasemount"/>
+  </joint> -->
+
+
+    <!-- Part dynamixelmotor -->
     <visual>
-      <origin xyz="0.369857 0.729104 0.04275" rpy="-3.14159 -2.71435e-16 -2.55565"/>
+      <origin xyz="0.194816 0.6096 0.09075" rpy="1.50988e-27 -1.59872e-14 -1.5708"/>
       <geometry>
-        <mesh filename="package://robot_desc/robot/assets/part_2.stl"/>
+        <mesh filename="package://robot_desc/robot/assets/dynamixelmotor.stl"/>
       </geometry>
-      <material name="part_2_material">
+      <material name="dynamixelmotor_material">
         <color rgba="0.647059 0.647059 0.647059 1.0"/>
       </material>
     </visual>
     <collision>
-      <origin xyz="0.369857 0.729104 0.04275" rpy="-3.14159 -2.71435e-16 -2.55565"/>
+      <origin xyz="0.194816 0.6096 0.09075" rpy="1.50988e-27 -1.59872e-14 -1.5708"/>
       <geometry>
-        <mesh filename="package://robot_desc/robot/assets/part_2.stl"/>
+        <mesh filename="package://robot_desc/robot/assets/dynamixelmotor.stl"/>
       </geometry>
     </collision>
-    <!-- Part part_1_4 -->
+    <!-- Part topshoulderlink -->
     <visual>
-      <origin xyz="0.495458 0.686372 0.08175" rpy="7.8454e-16 -1.01634e-15 -0.841585"/>
+      <origin xyz="0.318995 0.725464 0.11125" rpy="-5.45442e-16 -1.37603e-15 0.751951"/>
       <geometry>
-        <mesh filename="package://robot_desc/robot/assets/part_1__3.stl"/>
+        <mesh filename="package://robot_desc/robot/assets/topshoulderlink.stl"/>
       </geometry>
-      <material name="part_1_4_material">
+      <material name="topshoulderlink_material">
         <color rgba="0.615686 0.811765 0.929412 1.0"/>
       </material>
     </visual>
     <collision>
-      <origin xyz="0.495458 0.686372 0.08175" rpy="7.8454e-16 -1.01634e-15 -0.841585"/>
+      <origin xyz="0.318995 0.725464 0.11125" rpy="-5.45442e-16 -1.37603e-15 0.751951"/>
       <geometry>
-        <mesh filename="package://robot_desc/robot/assets/part_1__3.stl"/>
+        <mesh filename="package://robot_desc/robot/assets/topshoulderlink.stl"/>
       </geometry>
     </collision>
-    <!-- Part part_3 -->
+    <!-- Part motorhorn -->
     <visual>
-      <origin xyz="0.480122 0.970049 0.04075" rpy="-3.14159 3.26544e-16 1.41933"/>
+      <origin xyz="0.399873 0.729104 0.07775" rpy="-3.14159 -2.71435e-16 -2.55565"/>
       <geometry>
-        <mesh filename="package://robot_desc/robot/assets/part_3.stl"/>
+        <mesh filename="package://robot_desc/robot/assets/motorhorn.stl"/>
       </geometry>
-      <material name="part_3_material">
+      <material name="motorhorn_material">
+        <color rgba="0.647059 0.647059 0.647059 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.399873 0.729104 0.07775" rpy="-3.14159 -2.71435e-16 -2.55565"/>
+      <geometry>
+        <mesh filename="package://robot_desc/robot/assets/motorhorn.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part hooplink -->
+    <visual>
+      <origin xyz="0.652242 0.79964 0.11675" rpy="7.8454e-16 -1.01634e-15 -0.841585"/>
+      <geometry>
+        <mesh filename="package://robot_desc/robot/assets/hooplink.stl"/>
+      </geometry>
+      <material name="hooplink_material">
+        <color rgba="0.615686 0.811765 0.929412 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.652242 0.79964 0.11675" rpy="7.8454e-16 -1.01634e-15 -0.841585"/>
+      <geometry>
+        <mesh filename="package://robot_desc/robot/assets/hooplink.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bottomshoulderlink -->
+    <visual>
+      <origin xyz="0.368641 0.67238 0.07025" rpy="3.14159 -1.37603e-15 0.751951"/>
+      <geometry>
+        <mesh filename="package://robot_desc/robot/assets/bottomshoulderlink.stl"/>
+      </geometry>
+      <material name="bottomshoulderlink_material">
         <color rgba="0.231373 0.380392 0.705882 1.0"/>
       </material>
     </visual>
     <collision>
-      <origin xyz="0.480122 0.970049 0.04075" rpy="-3.14159 3.26544e-16 1.41933"/>
+      <origin xyz="0.368641 0.67238 0.07025" rpy="3.14159 -1.37603e-15 0.751951"/>
       <geometry>
-        <mesh filename="package://robot_desc/robot/assets/part_3.stl"/>
+        <mesh filename="package://robot_desc/robot/assets/bottomshoulderlink.stl"/>
       </geometry>
     </collision>
-    <!-- Part part_3_2 -->
+    <!-- Part motorhorn_2 -->
     <visual>
-      <origin xyz="0.338626 0.67238 0.03525" rpy="3.14159 -1.37603e-15 0.751951"/>
+      <origin xyz="0.131749 0.552632 0.07025" rpy="1.15994e-16 -2.40898e-17 -1.5708"/>
       <geometry>
-        <mesh filename="package://robot_desc/robot/assets/part_3.stl"/>
+        <mesh filename="package://robot_desc/robot/assets/motorhorn.stl"/>
       </geometry>
-      <material name="part_3_2_material">
-        <color rgba="0.231373 0.380392 0.705882 1.0"/>
-      </material>
-    </visual>
-    <collision>
-      <origin xyz="0.338626 0.67238 0.03525" rpy="3.14159 -1.37603e-15 0.751951"/>
-      <geometry>
-        <mesh filename="package://robot_desc/robot/assets/part_3.stl"/>
-      </geometry>
-    </collision>
-    <!-- Part part_2_2 -->
-    <visual>
-      <origin xyz="0.101734 0.552632 0.03525" rpy="1.15994e-16 -2.40898e-17 -1.5708"/>
-      <geometry>
-        <mesh filename="package://robot_desc/robot/assets/part_2.stl"/>
-      </geometry>
-      <material name="part_2_2_material">
+      <material name="motorhorn_2_material">
         <color rgba="0.647059 0.647059 0.647059 1.0"/>
       </material>
     </visual>
     <collision>
-      <origin xyz="0.101734 0.552632 0.03525" rpy="1.15994e-16 -2.40898e-17 -1.5708"/>
+      <origin xyz="0.131749 0.552632 0.07025" rpy="1.15994e-16 -2.40898e-17 -1.5708"/>
       <geometry>
-        <mesh filename="package://robot_desc/robot/assets/part_2.stl"/>
+        <mesh filename="package://robot_desc/robot/assets/motorhorn.stl"/>
       </geometry>
     </collision>
-    <!-- Part dc07_a_dummy_al_2 -->
+    <!-- Part dynamixelmotor_2 -->
     <visual>
-      <origin xyz="0.382447 0.813153 0.06125" rpy="1.37603e-15 -4.97532e-16 -0.818845"/>
+      <origin xyz="0.412463 0.813153 0.09625" rpy="1.37603e-15 -4.97532e-16 -0.818845"/>
       <geometry>
-        <mesh filename="package://robot_desc/robot/assets/dc07_a_dummy_al.stl"/>
+        <mesh filename="package://robot_desc/robot/assets/dynamixelmotor.stl"/>
       </geometry>
-      <material name="dc07_a_dummy_al_2_material">
+      <material name="dynamixelmotor_2_material">
         <color rgba="0.647059 0.647059 0.647059 1.0"/>
       </material>
     </visual>
     <collision>
-      <origin xyz="0.382447 0.813153 0.06125" rpy="1.37603e-15 -4.97532e-16 -0.818845"/>
+      <origin xyz="0.412463 0.813153 0.09625" rpy="1.37603e-15 -4.97532e-16 -0.818845"/>
       <geometry>
-        <mesh filename="package://robot_desc/robot/assets/dc07_a_dummy_al.stl"/>
-      </geometry>
-    </collision>
-    <!-- Part part_1_5 -->
-    <visual>
-      <origin xyz="0.609474 0.558765 0.08325" rpy="3.14159 -5.66549e-16 1.66076"/>
-      <geometry>
-        <mesh filename="package://robot_desc/robot/assets/part_1__4.stl"/>
-      </geometry>
-      <material name="part_1_5_material">
-        <color rgba="0.615686 0.811765 0.929412 1.0"/>
-      </material>
-    </visual>
-    <collision>
-      <origin xyz="0.609474 0.558765 0.08325" rpy="3.14159 -5.66549e-16 1.66076"/>
-      <geometry>
-        <mesh filename="package://robot_desc/robot/assets/part_1__4.stl"/>
+        <mesh filename="package://robot_desc/robot/assets/dynamixelmotor.stl"/>
       </geometry>
     </collision>
   </link>

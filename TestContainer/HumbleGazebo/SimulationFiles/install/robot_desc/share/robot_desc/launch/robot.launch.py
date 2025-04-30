@@ -2,6 +2,7 @@ import os
 import launch_ros.descriptions
 
 from ament_index_python.packages import get_package_share_directory
+from ament_index_python import get_package_prefix
 from launch import LaunchDescription
 from launch.substitutions import Command
 from launch_ros.actions import Node
@@ -14,19 +15,26 @@ def generate_launch_description():
     # ####### DATA INPUT ##########
     # urdf_file = 'robot.urdf'
     # #xacro_file = "urdfbot.xacro"
-    # package_description = "robot_desc"
+    package_description = "robot_desc"
     # robot_description_package = launch_ros.substitutions.FindPackageShare(package='robot_desc').find('robot_desc')
+
+    pkg_share_path = os.pathsep + os.path.join(get_package_prefix(package_description), 'share')
+    if 'GAZEBO_MODEL_PATH' in os.environ:
+        os.environ['GAZEBO_MODEL_PATH'] += pkg_share_path
+    else:
+        os.environ['GAZEBO_MODEL_PATH'] =  pkg_share_path
 
     ####### DATA INPUT END ##########
     print("Fetching URDF ==>")
     #robot_desc_path = os.path.join(get_package_share_directory(package_description), "robot", urdf_file)
-    print("Found UDRF")
 
     urdf_file_name = 'robot.urdf'
     urdf = os.path.join(
-        get_package_share_directory('robot_desc'),
+        get_package_share_directory(package_description),
         'robot',
         urdf_file_name)
+    
+    print("Found UDRF")
     
     with open(urdf, 'r') as infp:
         robot_desc = infp.read()
