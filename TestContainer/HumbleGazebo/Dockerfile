@@ -45,8 +45,10 @@ RUN apt-get update \
   && sudo add-apt-repository ppa:openscad/releases \
   && sudo apt-get install openscad -y \
   && sudo apt-get install meshlab -y \
+  && sudo apt-get install ros-humble-joint-state-publisher -y \
+  && sudo apt-get install ros-humble-joint-state-publisher-gui -y \
   && rm -rf /var/lib/apt/lists/* 
-  
+
 
 # Copy the entrypoint and bashrc scripts so we have 
 # our container's environment set up correctly
