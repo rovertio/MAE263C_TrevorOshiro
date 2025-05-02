@@ -13,8 +13,8 @@
     <visual>
       <origin xyz="0 0.1156 0.06" rpy="1.5708 -0 -1.5708"/>
       <geometry>
-        <!-- <mesh filename="package://robot_desc/robot/assets/armbasemount.stl"/> -->
-        <mesh filename="robot_desc/robot/assets/armbasemount.stl"/>
+        <mesh filename="package://robot_desc/robot/assets/armbasemount.stl"/>
+        <!-- <mesh filename="robot_desc/robot/assets/armbasemount.stl"/> -->
       </geometry>
       <material name="armbasemount_material">
         <color rgba="0.615686 0.811765 0.929412 1.0"/>
@@ -23,8 +23,8 @@
     <collision>
       <origin xyz="0 0.1156 0.06" rpy="1.5708 -0 -1.5708"/>
       <geometry>
-        <!-- <mesh filename="package://robot_desc/robot/assets/armbasemount.stl"/> -->
-        <mesh filename="robot_desc/robot/assets/armbasemount.stl"/>
+        <mesh filename="package://robot_desc/robot/assets/armbasemount.stl"/>
+        <!-- <mesh filename="robot_desc/robot/assets/armbasemount.stl"/> -->
       </geometry>
     </collision>
   </link>
@@ -39,8 +39,8 @@
     <visual>
       <origin xyz="-0.0358 -0.0085 -0.01502" rpy="0 -0 1.5708"/>
       <geometry>
-        <!-- <mesh filename="package://robot_desc/robot/assets/dynamixelmotor_withhorn.stl"/> -->
-        <mesh filename="robot_desc/robot/assets/dynamixelmotor_withhorn.stl"/>
+        <mesh filename="package://robot_desc/robot/assets/dynamixelmotor_withhorn.stl"/>
+        <!-- <mesh filename="robot_desc/robot/assets/dynamixelmotor_withhorn.stl"/> -->
       </geometry>
       <material name="dynamixelmotor_withhorn_material">
         <color rgba="0.647059 0.647059 0.647059 1.0"/>
@@ -49,8 +49,8 @@
     <collision>
       <origin xyz="-0.0358 -0.0085 -0.01502" rpy="0 -0 1.5708"/>
       <geometry>
-        <!-- <mesh filename="package://robot_desc/robot/assets/dynamixelmotor_withhorn.stl"/> -->
-        <mesh filename="robot_desc/robot/assets/dynamixelmotor_withhorn.stl"/>
+        <mesh filename="package://robot_desc/robot/assets/dynamixelmotor_withhorn.stl"/>
+        <!-- <mesh filename="robot_desc/robot/assets/dynamixelmotor_withhorn.stl"/> -->
       </geometry>
     </collision>
   </link>
@@ -65,8 +65,8 @@
     <visual>
       <origin xyz="0.169838 0.0002 0" rpy="-3.14159 -0 -2.97496e-65"/>
       <geometry>
-        <!-- <mesh filename="package://robot_desc/robot/assets/combinedshoulder.stl"/> -->
-        <mesh filename="robot_desc/robot/assets/combinedshoulder.stl"/>
+        <mesh filename="package://robot_desc/robot/assets/combinedshoulder.stl"/>
+        <!-- <mesh filename="robot_desc/robot/assets/combinedshoulder.stl"/> -->
       </geometry>
       <material name="combinedshoulder_material">
         <color rgba="0.615686 0.811765 0.929412 1.0"/>
@@ -75,8 +75,8 @@
     <collision>
       <origin xyz="0.169838 0.0002 0" rpy="-3.14159 -0 -2.97496e-65"/>
       <geometry>
-        <!-- <mesh filename="package://robot_desc/robot/assets/combinedshoulder.stl"/> -->
-        <mesh filename="robot_desc/robot/assets/combinedshoulder.stl"/>
+        <mesh filename="package://robot_desc/robot/assets/combinedshoulder.stl"/>
+        <!-- <mesh filename="robot_desc/robot/assets/combinedshoulder.stl"/> -->
       </geometry>
     </collision>
   </link>
@@ -91,8 +91,8 @@
     <visual>
       <origin xyz="0.0358 0.0085 -0.015" rpy="-1.36846e-48 -1.71531e-32 -1.5708"/>
       <geometry>
-        <!-- <mesh filename="package://robot_desc/robot/assets/dynamixelmotor_withhorn.stl"/> -->
-        <mesh filename="robot_desc/robot/assets/dynamixelmotor_withhorn.stl"/>
+        <mesh filename="package://robot_desc/robot/assets/dynamixelmotor_withhorn.stl"/>
+        <!-- <mesh filename="robot_desc/robot/assets/dynamixelmotor_withhorn.stl"/> -->
       </geometry>
       <material name="dynamixelmotor_withhorn_2_material">
         <color rgba="0.647059 0.647059 0.647059 1.0"/>
@@ -101,8 +101,8 @@
     <collision>
       <origin xyz="0.0358 0.0085 -0.015" rpy="-1.36846e-48 -1.71531e-32 -1.5708"/>
       <geometry>
-        <!-- <mesh filename="package://robot_desc/robot/assets/dynamixelmotor_withhorn.stl"/> -->
-        <mesh filename="robot_desc/robot/assets/dynamixelmotor_withhorn.stl"/>
+        <mesh filename="package://robot_desc/robot/assets/dynamixelmotor_withhorn.stl"/>
+        <!-- <mesh filename="robot_desc/robot/assets/dynamixelmotor_withhorn.stl"/> -->
       </geometry>
     </collision>
   </link>
@@ -117,8 +117,8 @@
     <visual>
       <origin xyz="0.169838 0.1698 0" rpy="0 -0 2.97496e-65"/>
       <geometry>
-        <!-- <mesh filename="package://robot_desc/robot/assets/hooplink.stl"/> -->
-        <mesh filename="robot_desc/robot/assets/hooplink.stl"/>
+        <mesh filename="package://robot_desc/robot/assets/hooplink.stl"/>
+        <!-- <mesh filename="robot_desc/robot/assets/hooplink.stl"/> -->
       </geometry>
       <material name="hooplink_material">
         <color rgba="0.615686 0.811765 0.929412 1.0"/>
@@ -127,8 +127,8 @@
     <collision>
       <origin xyz="0.169838 0.1698 0" rpy="0 -0 2.97496e-65"/>
       <geometry>
-        <!-- <mesh filename="package://robot_desc/robot/assets/hooplink.stl"/> -->
-        <mesh filename="robot_desc/robot/assets/hooplink.stl"/>
+        <mesh filename="package://robot_desc/robot/assets/hooplink.stl"/>
+        <!-- <mesh filename="robot_desc/robot/assets/hooplink.stl"/> -->
       </geometry>
     </collision>
   </link>

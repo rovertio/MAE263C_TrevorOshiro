@@ -67,67 +67,27 @@ Visualization Manager:
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
-        lowerlimb:
+        armbasemount:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        lowerlimb_2:
+        dynamixelmotor_withhorn:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        lowerlimb_3:
+        combinedshoulder:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        lowerlimb_4:
+        dynamixelmotor_withhorn_2:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        shoulder:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        shoulder_2:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        shoulder_3:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        shoulder_4:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        torso_quadruped:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        upperlimb:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        upperlimb_2:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        upperlimb_3:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        upperlimb_4:
+        hooplink:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -142,31 +102,15 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: true
-        lowerlimb:
+        armbasemount:
           Value: true
-        lowerlimb_2:
+        dynamixelmotor_withhorn:
           Value: true
-        lowerlimb_3:
+        combinedshoulder:
           Value: true
-        lowerlimb_4:
+        dynamixelmotor_withhorn_2:
           Value: true
-        shoulder:
-          Value: true
-        shoulder_2:
-          Value: true
-        shoulder_3:
-          Value: true
-        shoulder_4:
-          Value: true
-        torso_quadruped:
-          Value: true
-        upperlimb:
-          Value: true
-        upperlimb_2:
-          Value: true
-        upperlimb_3:
-          Value: true
-        upperlimb_4:
+        hooplink:
           Value: true
       Marker Scale: 0.30000001192092896
       Name: TF
@@ -174,29 +118,18 @@ Visualization Manager:
       Show Axes: true
       Show Names: false
       Tree:
-        torso_quadruped:
-          shoulder:
-            upperlimb:
-              lowerlimb:
-                {}
-          shoulder_2:
-            upperlimb_2:
-              lowerlimb_2:
-                {}
-          shoulder_3:
-            upperlimb_3:
-              lowerlimb_3:
-                {}
-          shoulder_4:
-            upperlimb_4:
-              lowerlimb_4:
-                {}
+        armbasemount:
+          dynamixelmotor_withhorn:
+            combinedshoulder:
+              dynamixelmotor_withhorn_2:
+                hooplink:
+                  {}
       Update Interval: 0
       Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
-    Fixed Frame: torso_quadruped
+    Fixed Frame: armbasemount
     Frame Rate: 30
   Name: root
   Tools:
