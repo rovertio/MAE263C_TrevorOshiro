@@ -1,0 +1,13 @@
+{
+    "configuration": "default",
+    "documentId": "30e9438e4d9bde88cc7db519",
+    "documentMicroversion": "38edc7fc56208c1bbd05f8b6",
+    "elementId": "4c3a97a79891f16b9b458f6e",
+    "fullConfiguration": "default",
+    "id": "Md7VHmCXMO55atl4B",
+    "isStandardContent": false,
+    "name": "BEARING_MF106 <1>",
+    "partId": "JFD",
+    "suppressed": false,
+    "type": "Part"
+}

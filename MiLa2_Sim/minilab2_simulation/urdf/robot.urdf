@@ -1,0 +1,287 @@
+<?xml version="1.0" ?>
+<!-- Generated using onshape-to-robot -->
+<!-- Onshape https://cad.onshape.com/documents/30e9438e4d9bde88cc7db519/w/02fc28a9e1a4d34f79fd065c/e/bf009557b2d0a18e74e247f8 -->
+<robot name="urdf">
+  <!-- Link link0 -->
+  <link name="link0">
+    <inertial>
+      <origin xyz="-2.15191e-05 -0.000436871 0.0262207" rpy="0 0 0"/>
+      <mass value="0.193537"/>
+      <inertia ixx="6.247e-05" ixy="2.16256e-08" ixz="-4.42063e-08" iyy="4.95578e-05" iyz="-8.1425e-07" izz="3.89204e-05"/>
+    </inertial>
+    <!-- Part mounting_bracket -->
+    <visual>
+      <origin xyz="8.05603e-18 -0.0153293 -0.01" rpy="-1.5708 -1.49144e-30 -3.14159"/>
+      <geometry>
+        <mesh filename="./assets/mounting_bracket.obj"/>
+      </geometry>
+      <material name="mounting_bracket_material">
+        <color rgba="1 1 1 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="8.05603e-18 -0.0153293 -0.01" rpy="-1.5708 -1.49144e-30 -3.14159"/>
+      <geometry>
+        <mesh filename="./assets/mounting_bracket.obj"/>
+      </geometry>
+    </collision>
+    <!-- Part mounting_bracket_2 -->
+    <visual>
+      <origin xyz="-1.92675e-17 0.0146707 -0.01" rpy="-1.5708 5.55112e-17 -7.08735e-16"/>
+      <geometry>
+        <mesh filename="./assets/mounting_bracket.obj"/>
+      </geometry>
+      <material name="mounting_bracket_2_material">
+        <color rgba="1 1 1 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-1.92675e-17 0.0146707 -0.01" rpy="-1.5708 5.55112e-17 -7.08735e-16"/>
+      <geometry>
+        <mesh filename="./assets/mounting_bracket.obj"/>
+      </geometry>
+    </collision>
+    <!-- Part dc07_a_dummy_al -->
+    <visual>
+      <origin xyz="4.03295e-20 -0.000329315 0.0386" rpy="2.66454e-15 -7.09975e-30 -3.14159"/>
+      <geometry>
+        <mesh filename="./assets/dc07_a_dummy_al.obj"/>
+      </geometry>
+      <material name="dc07_a_dummy_al_material">
+        <color rgba="0.360784 0.352941 0.352941 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="4.03295e-20 -0.000329315 0.0386" rpy="2.66454e-15 -7.09975e-30 -3.14159"/>
+      <geometry>
+        <mesh filename="./assets/dc07_a_dummy_al.obj"/>
+      </geometry>
+    </collision>
+    <!-- Part dc07_a_cap_bearing_42 -->
+    <visual>
+      <origin xyz="2.46599e-18 -0.0205793 0.0386" rpy="-3.14159 -7.09975e-30 -3.14159"/>
+      <geometry>
+        <mesh filename="./assets/dc07_a_cap_bearing_42.obj"/>
+      </geometry>
+      <material name="dc07_a_cap_bearing_42_material">
+        <color rgba="0.901961 0.901961 0.901961 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="2.46599e-18 -0.0205793 0.0386" rpy="-3.14159 -7.09975e-30 -3.14159"/>
+      <geometry>
+        <mesh filename="./assets/dc07_a_cap_bearing_42.obj"/>
+      </geometry>
+    </collision>
+    <!-- Part bearing_mf106 -->
+    <visual>
+      <origin xyz="2.4415e-18 -0.0203793 0.0386" rpy="1.5708 -7.09975e-30 -3.14159"/>
+      <geometry>
+        <mesh filename="./assets/bearing_mf106.obj"/>
+      </geometry>
+      <material name="bearing_mf106_material">
+        <color rgba="0.901961 0.901961 0.901961 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="2.4415e-18 -0.0203793 0.0386" rpy="1.5708 -7.09975e-30 -3.14159"/>
+      <geometry>
+        <mesh filename="./assets/bearing_mf106.obj"/>
+      </geometry>
+    </collision>
+    <!-- Part hn07_i_02 -->
+    <visual>
+      <origin xyz="2.46513e-18 -0.0201293 0.0386" rpy="-1.5708 -7.09975e-30 -3.14159"/>
+      <geometry>
+        <mesh filename="./assets/hn07_i_02.obj"/>
+      </geometry>
+      <material name="hn07_i_02_material">
+        <color rgba="0.901961 0.901961 0.901961 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="2.46513e-18 -0.0201293 0.0386" rpy="-1.5708 -7.09975e-30 -3.14159"/>
+      <geometry>
+        <mesh filename="./assets/hn07_i_02.obj"/>
+      </geometry>
+    </collision>
+    <!-- Part dc07_a_dummy_al_2 -->
+    <visual>
+      <origin xyz="-1.39202e-20 -0.000329315 0.0386" rpy="2.66454e-15 -7.09975e-30 -3.14159"/>
+      <geometry>
+        <mesh filename="./assets/dc07_a_dummy_al__2.obj"/>
+      </geometry>
+      <material name="dc07_a_dummy_al_2_material">
+        <color rgba="0.360784 0.352941 0.352941 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-1.39202e-20 -0.000329315 0.0386" rpy="2.66454e-15 -7.09975e-30 -3.14159"/>
+      <geometry>
+        <mesh filename="./assets/dc07_a_dummy_al__2.obj"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link link1 -->
+  <link name="link1">
+    <inertial>
+      <origin xyz="0.0533903 -2.09904e-05 -0.0205766" rpy="0 0 0"/>
+      <mass value="0.200624"/>
+      <inertia ixx="3.98986e-05" ixy="-3.89409e-08" ixz="-6.41053e-07" iyy="7.81564e-05" iyz="2.15177e-08" izz="6.56248e-05"/>
+    </inertial>
+    <!-- Part proximal_link -->
+    <visual>
+      <origin xyz="0.0175 -2.60209e-18 -0.02035" rpy="-1.5708 -0 -1.5708"/>
+      <geometry>
+        <mesh filename="./assets/proximal_link.obj"/>
+      </geometry>
+      <material name="proximal_link_material">
+        <color rgba="1 1 1 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0175 -2.60209e-18 -0.02035" rpy="-1.5708 -0 -1.5708"/>
+      <geometry>
+        <mesh filename="./assets/proximal_link.obj"/>
+      </geometry>
+    </collision>
+    <!-- Part dc07_a_dummy_al_3 -->
+    <visual>
+      <origin xyz="0.0675 6.76524e-16 -0.0205" rpy="-1.5708 9.42146e-23 -1.5708"/>
+      <geometry>
+        <mesh filename="./assets/dc07_a_dummy_al.obj"/>
+      </geometry>
+      <material name="dc07_a_dummy_al_3_material">
+        <color rgba="0.360784 0.352941 0.352941 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0675 6.76524e-16 -0.0205" rpy="-1.5708 9.42146e-23 -1.5708"/>
+      <geometry>
+        <mesh filename="./assets/dc07_a_dummy_al.obj"/>
+      </geometry>
+    </collision>
+    <!-- Part dc07_a_cap_bearing_42_2 -->
+    <visual>
+      <origin xyz="0.0675 5.49144e-16 -0.04075" rpy="1.5708 1.91876e-22 -1.5708"/>
+      <geometry>
+        <mesh filename="./assets/dc07_a_cap_bearing_42.obj"/>
+      </geometry>
+      <material name="dc07_a_cap_bearing_42_2_material">
+        <color rgba="0.901961 0.901961 0.901961 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0675 5.49144e-16 -0.04075" rpy="1.5708 1.91876e-22 -1.5708"/>
+      <geometry>
+        <mesh filename="./assets/dc07_a_cap_bearing_42.obj"/>
+      </geometry>
+    </collision>
+    <!-- Part bearing_mf106_2 -->
+    <visual>
+      <origin xyz="0.0675 5.14474e-16 -0.04055" rpy="-6.26166e-14 1.34803e-15 -1.5708"/>
+      <geometry>
+        <mesh filename="./assets/bearing_mf106.obj"/>
+      </geometry>
+      <material name="bearing_mf106_2_material">
+        <color rgba="0.901961 0.901961 0.901961 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0675 5.14474e-16 -0.04055" rpy="-6.26166e-14 1.34803e-15 -1.5708"/>
+      <geometry>
+        <mesh filename="./assets/bearing_mf106.obj"/>
+      </geometry>
+    </collision>
+    <!-- Part hn07_i_02_2 -->
+    <visual>
+      <origin xyz="0.0675 5.16239e-16 -0.0403" rpy="3.14159 1.40166e-15 -1.5708"/>
+      <geometry>
+        <mesh filename="./assets/hn07_i_02.obj"/>
+      </geometry>
+      <material name="hn07_i_02_2_material">
+        <color rgba="0.901961 0.901961 0.901961 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0675 5.16239e-16 -0.0403" rpy="3.14159 1.40166e-15 -1.5708"/>
+      <geometry>
+        <mesh filename="./assets/hn07_i_02.obj"/>
+      </geometry>
+    </collision>
+    <!-- Part dc07_a_dummy_al_4 -->
+    <visual>
+      <origin xyz="0.0675 6.76524e-16 -0.0205" rpy="-1.5708 1.78641e-22 -1.5708"/>
+      <geometry>
+        <mesh filename="./assets/dc07_a_dummy_al__2.obj"/>
+      </geometry>
+      <material name="dc07_a_dummy_al_4_material">
+        <color rgba="0.360784 0.352941 0.352941 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0675 6.76524e-16 -0.0205" rpy="-1.5708 1.78641e-22 -1.5708"/>
+      <geometry>
+        <mesh filename="./assets/dc07_a_dummy_al__2.obj"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link link2 -->
+  <link name="link2">
+    <inertial>
+      <origin xyz="0.0281188 -1.98653e-06 -0.02035" rpy="0 0 0"/>
+      <mass value="0.0156075"/>
+      <inertia ixx="7.46893e-06" ixy="-8.71818e-10" ixz="5.63966e-23" iyy="1.07418e-05" iyz="-5.04121e-26" izz="6.49362e-06"/>
+    </inertial>
+    <!-- Part link2 -->
+    <visual>
+      <origin xyz="0.0175 -2.60209e-18 -0.02035" rpy="-1.5708 -9.5897e-33 -1.5708"/>
+      <geometry>
+        <mesh filename="./assets/link2.obj"/>
+      </geometry>
+      <material name="link2_material">
+        <color rgba="1 1 1 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0175 -2.60209e-18 -0.02035" rpy="-1.5708 -9.5897e-33 -1.5708"/>
+      <geometry>
+        <mesh filename="./assets/link2.obj"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Joint from link1 to link2 -->
+  <joint name="joint1" type="revolute">
+    <origin xyz="0.0675 6.84071e-16 -3.81639e-17" rpy="9.42146e-23 -1.82603e-16 9.48881e-09"/>
+    <parent link="link1"/>
+    <child link="link2"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-3.141592653589793" upper="3.141592653589793"/>
+  </joint>
+  <!-- Joint from link0 to link1 -->
+  <joint name="joint0" type="revolute">
+    <origin xyz="-7.57433e-19 0.0201707 0.0386" rpy="-1.5708 -1.5708 0"/>
+    <parent link="link0"/>
+    <child link="link1"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-3.141592653589793" upper="3.141592653589793"/>
+  </joint>
+  <transmission name="trans0">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint0">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="joint0_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="trans1">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint1">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="joint1_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+</robot>
