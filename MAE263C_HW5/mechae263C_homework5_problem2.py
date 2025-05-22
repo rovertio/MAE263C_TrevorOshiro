@@ -517,18 +517,18 @@ if __name__ == "__main__":
 
     # A numpy array of shape (2, 2) representing the impedance controller proportional
     # gains in the constraint frame
-    K_P_c = np.array([[100000, 0], 
-                   [0, 100000]])
+    K_P_c = np.array([[1.2e7, 0], 
+                   [0, 1.2e7]])
 
     # A numpy array of shape (2, 2) representing the impedance controller derivative
     # gains in the constraint frame
-    K_D_c = np.array([[10000, 0], 
-                   [0, 10000]])
+    K_D_c = np.array([[1.15e5, 0], 
+                   [0, 1.15e5]])
 
     # A numpy array of shape (2, 2) representing the impedance controller inertia gains
     # in the constraint frame
-    M_d_c = np.array([[100000, 0], 
-                   [0, 100000]])
+    M_d_c = np.array([[5e3, 0], 
+                   [0, 5e3]])
 
     # A numpy array of shape (2, 2) representing the impedance controller proportional
     # gains in the base frame (see hint in problem statement)
@@ -587,28 +587,29 @@ if __name__ == "__main__":
         K=K,
     )
 
-    print('sim finish')
+    print('sim finished')
 
     # ----------------------------------------------------------------------------------
     # TODO: Plot Control Block Diagram
     #   Use the `plot_diagram` function to plot the diagram of the controller design
     #   (which is stored in the `controller_diagram` variable)
     # ----------------------------------------------------------------------------------
-    controller_diagram_fig, _ = plot_diagram(
-        controller_diagram, fig_width_in=11, max_depth=1
-    )
-    controller_diagram_fig.savefig('Problem2/controlDia.png', dpi=300)
-    print('saved controller diagram')
+    # controller_diagram_fig, _ = plot_diagram(
+    #     controller_diagram, fig_width_in=11, max_depth=1
+    # )
+    # controller_diagram_fig.savefig('Problem2/controlDia.png', dpi=300)
+    # print('saved controller diagram')
 
     # ----------------------------------------------------------------------------------
     # TODO: Plot Simulation Block Diagram
     #   Use the `plot_diagram` function to plot the high-level diagram of the simulation
     #   (which is stored in the `simulation_diagram` variable)
     # ----------------------------------------------------------------------------------
-    simulation_diagram_fig, _ = plot_diagram(
-        simulation_diagram, fig_width_in=8, max_depth=1
-    )
-    simulation_diagram_fig.savefig('Problem2/simulationDia.png', dpi=300)
+    # simulation_diagram_fig, _ = plot_diagram(
+    #     simulation_diagram, fig_width_in=8, max_depth=1
+    # )
+    # simulation_diagram_fig.savefig('Problem2/simulationDia.png', dpi=300)
+    # print('saved simulation diagram')
     # ==================================================================================
 
     # ==================================================================================
@@ -667,7 +668,7 @@ if __name__ == "__main__":
         t, position_error[0], color="black", label="X Error"
     )
     base_error.plot(
-        t, position_error[1], color="black", label="Y Error"
+        t, position_error[1], color="blue", label="Y Error"
     )
     base_error.legend()
     fig.savefig('Problem2/Base_PositionError.png', dpi=300)
@@ -690,7 +691,7 @@ if __name__ == "__main__":
         t, forces[0], color="black", label="X Contact Force"
     )
     base_force.plot(
-        t, forces[1], color="black", label="Y Contact Force"
+        t, forces[1], color="blue", label="Y Contact Force"
     )
     base_force.legend()
     fig.savefig('Problem2/Base_Force.png', dpi=300)
@@ -729,7 +730,7 @@ if __name__ == "__main__":
         t, position_error_in_constraint_frame[0], color="black", label="X Error"
     )
     con_error.plot(
-        t, position_error_in_constraint_frame[1], color="black", label="Y Error"
+        t, position_error_in_constraint_frame[1], color="blue", label="Y Error"
     )
     con_error.legend()
     fig.savefig('Problem2/Cosntraint_PositionError.png', dpi=300)
@@ -752,7 +753,7 @@ if __name__ == "__main__":
         t, forces_in_constraint_frame[0], color="black", label="X Contact Force"
     )
     con_force.plot(
-        t, forces_in_constraint_frame[1], color="black", label="Y Contact Force"
+        t, forces_in_constraint_frame[1], color="blue", label="Y Contact Force"
     )
     con_force.legend()
     fig.savefig('Problem2/Constraint_Force.png', dpi=300)

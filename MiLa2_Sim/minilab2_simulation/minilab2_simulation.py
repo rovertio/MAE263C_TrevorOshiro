@@ -96,7 +96,7 @@ class PDwGravityCompensationController(LeafSystem):
         # Use the `self.q_desired_rad` variable and the `q_rad` variable to compute
         # the joint position error for the current time step.
         # ------------------------------------------------------------------------------
-        q_error = ...
+        q_error = self.q_desired_rad - q_rad
         
         # ------------------------------------------------------------------------------
         # Step 3 - Calculate gravity compensation term
@@ -113,7 +113,7 @@ class PDwGravityCompensationController(LeafSystem):
         # Tip: A NumPy array `A` of shape (2, 2) and a NumPy array `b` of shape (2,)
         #      can be matrix-vector multiplied via the Python syntax `A @ b`.
         # ------------------------------------------------------------------------------
-        u = ...
+        u = gravity_comp_torques + self.K_P @ q_error - self.K_D @ qdot_rad_per_s
 
         # Saturate joint torque output to motor limits
         u = np.minimum(np.maximum(u, -2.5), 2.5)
@@ -193,17 +193,19 @@ if __name__ == "__main__":
     # 2) Replace the corresponding `...` values with your K_P and K_D gain matrices
     # ----------------------------------------------------------------------------------
     # A Python list with two elements representing the initial joint configuration
-    q_initial = [..., ...]
+    q_initial = [65.0, 25.0]
  
     # A Python list with two elements representing the desired joint configuration
-    q_desired = [..., ...]
+    q_desired = [45.0, 45.0]
 
     # A numpy array of shape (2, 2) representing the proportional gains of your
     # controller
-    K_P = ...
+    K_P = np.array([[10, 0],
+                   [0, 10]])
 
     # A numpy array of shape (2, 2) representing the derivative gains of your controller
-    K_D = ...
+    K_D = np.array([[0.155, 0],
+                   [0, 0.0206]])
 
     # Add controller to diagram builder
     controller: PDwGravityCompensationController = builder.AddNamedSystem(
@@ -267,8 +269,9 @@ if __name__ == "__main__":
     timestamps = joint_state_log.sample_times()
     position_history = np.rad2deg(joint_state_log.data()[:2, :])
 
-    date_str = datetime.now().strftime("%d-%m_%H-%M-%S")
-    fig_file_name = f"joint_positions_vs_time_{date_str}.pdf"
+    # date_str = datetime.now().strftime("%d-%m_%H-%M-%S")
+    # fig_file_name = f"joint_positions_vs_time_{date_str}.png"
+    fig_file_name = "joint_positions_vs_time.png"
 
     # Create figure and axes
     fig = plt.figure(figsize=(10, 5))
@@ -335,5 +338,5 @@ if __name__ == "__main__":
     fig.savefig(fig_file_name)
 
     print()
-    plt.show()
+    # plt.show()
 
